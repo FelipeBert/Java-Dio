@@ -5,11 +5,27 @@ import java.time.temporal.ChronoUnit;
 
 public class Pessoa {
     private String nome;
+    private String documento;
     private LocalDate nascimento;
+    private DadosLocalizacao endereco;
+
+    public Pessoa(String nome, LocalDate nascimento, String documento) {
+        this.nome = nome;
+        this.nascimento = nascimento;
+        this.documento = documento;
+    }
 
     public Pessoa(String nome, LocalDate nascimento) {
         this.nome = nome;
         this.nascimento = nascimento;
+    }
+
+    public void setEndereco(DadosLocalizacao dadosLocalizacao){
+        this.endereco = dadosLocalizacao;
+    }
+
+    public DadosLocalizacao getEndereco(){
+        return this.endereco;
     }
 
     public String getNome() {
@@ -18,6 +34,10 @@ public class Pessoa {
 
     public LocalDate getNascimento() {
         return nascimento;
+    }
+
+    public String getDocumento() {
+        return documento;
     }
 
     public int getIdade(){
